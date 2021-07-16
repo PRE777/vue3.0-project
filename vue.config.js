@@ -10,8 +10,8 @@ module.exports = {
   indexPath: "index.html", //指定生成的index.html输出路径
   filenameHashing: true, // 构建后的文件是否启用哈希命名
   // 是否在save文件时lint代码, 需要先安装cli-plugin-eslint
-  // lintOnSave: false,
-  lintOnSave: process.env.NODE_ENV !== "production",
+  lintOnSave: false,
+  // lintOnSave: process.env.NODE_ENV !== "production",
   //是否使用包含运行时编译器的 Vue 构建版本。设置true后你就可以在使用template
   runtimeCompiler: true, //ture: runtime-compiler  false: runtime-only
   productionSourceMap: process.env.NODE_ENV !== "production",
@@ -132,7 +132,15 @@ module.exports = {
     extract: true,
     sourceMap: true, // 开启 CSS source maps 否则浏览器中无法查看样式归属
     // css预设器配置项
-    loaderOptions: {},
+    loaderOptions: {
+      // 给 sass-loader 传递选项
+      scss: {
+        // sass-loader版本V8以上
+        prependData: '@import "~@/assets/css/scss/common.scss";',
+        // sass-loader版本V8以下
+        // additionalData: '@import "~@/assets/css/scss/common.scss";'
+      },
+    },
   },
   // 第三方插件配置
   pluginOptions: {},
