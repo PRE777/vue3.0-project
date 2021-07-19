@@ -1,0 +1,16 @@
+// 不同主题下的颜色列表
+
+@import "./variable.scss";
+$themes: (
+  // 默认主题
+  theme-default:
+    (
+      // 布局
+      basis-color: $default-color
+    ),
+  // 暗夜模式
+  theme-night:
+    (
+      basis-color: $night-color,
+    )
+);

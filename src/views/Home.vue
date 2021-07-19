@@ -1,9 +1,18 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <img alt="Vue logo" src="../assets/lion.jpeg" />
-    <div class="bg">123</div>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="home" :class="themeClass">
+    <div class="app-container">
+      <p>试试手动多多多多多多多</p>
+      <img alt="Vue logo" src="../assets/logo.png" />
+      <img alt="Vue logo" src="../assets/lion.jpeg" />
+      <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+      <div class="bg"></div>
+
+      <select v-model="theme">
+        <option value="default">default</option>
+        <option value="night">night</option>
+        <!-- <option value="blue">Blue</option> -->
+      </select>
+    </div>
   </div>
 </template>
 
@@ -13,14 +22,30 @@ import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      theme: "default",
+    };
+  },
   components: {
     HelloWorld,
+  },
+  computed: {
+    themeClass() {
+      return `theme-${this.theme}`;
+    },
   },
 };
 </script>
 <style lang="scss" scoped>
-.home{
-  background: $mbgc;
+@import "@/assets/css/scss/theme/theme.scss";
+
+.app-container {
+  // background: red;
+  @include themify($themes) {
+    background: themed("background");
+    color: themed("font-color");
+  }
 }
 .bg {
   width: 150px;

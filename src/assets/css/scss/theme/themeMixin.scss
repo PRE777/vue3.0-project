@@ -1,0 +1,15 @@
+@import "./themeVariable.scss"; // 获取主题
+
+@mixin themify($themes) {
+  @each $theme-name, $map in $themes {
+    $myMap: $map !global;
+    // 定义一个新类
+    .theme-#{$theme-name} {
+      @content; // 插槽位置
+    }
+  }
+}
+// 从主题色map中取出对应颜色
+@function themed($key) {
+  @return map-get($myMap, $key);
+}
