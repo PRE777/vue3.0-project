@@ -38,13 +38,10 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "@/assets/css/scss/theme/theme.scss";
-
 .app-container {
-  // background: red;
   @include themify($themes) {
     background: themed("background");
-    color: themed("font-color");
+    color: themed("font-color"); 
   }
 }
 .bg {

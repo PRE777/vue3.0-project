@@ -1,5 +1,14 @@
-
 // 定义常用颜色变量表
 
-$default-color: #f9f6f6; //默认主题背景色
-$night-color:rgb(90, 83, 83); // 暗夜模式背景颜色
+$theme-default: (
+  font-color: #000,
+  font-size: 14px,
+  background: #f9f6f6,
+);
+
+// 暗夜模式
+$theme-night: (
+  font-color: #fff,
+  font-size: 14px,
+  background: rgb(102, 98, 98),
+);

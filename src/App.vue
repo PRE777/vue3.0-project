@@ -7,14 +7,7 @@
 </template>
 
 <style lang="scss">
-// body {
-//   width: 100%;
-//   height: 100%;
-//   // background: red;
-//   @include themify($themes) {
-//     background: themed("background");
-//   }
-// }
+@import "@/assets/css/scss/theme/themeMixin.scss";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
