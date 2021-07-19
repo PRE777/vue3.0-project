@@ -6,8 +6,15 @@
   <router-view />
 </template>
 
+<script>
+export default {
+  data() {
+    return {};
+  },
+};
+</script>
+
 <style lang="scss">
-@import "@/assets/css/scss/theme/themeMixin.scss";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

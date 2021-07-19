@@ -136,7 +136,7 @@ module.exports = {
       // 给 sass-loader 传递选项
       scss: {
         // sass-loader版本V8以上
-        prependData: '@import "~@/assets/css/scss/theme/theme.scss";',
+        prependData: '@import "~@/assets/css/scss/theme/themeMixin.scss";',
         // sass-loader版本V8以下
         // additionalData: '@import "~@/assets/css/scss/common.scss";'
       },
