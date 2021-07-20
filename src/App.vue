@@ -1,8 +1,8 @@
 <template>
-  <!-- <div id="nav">
+  <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
-  </div> -->
+  </div>
   <router-view />
 </template>
 
@@ -11,6 +11,12 @@ export default {
   data() {
     return {};
   },
+  created() {
+    // let theme = this.$store.getters["projectTheme/getProjectTheme"];
+    debugger;
+  },
+  mounted() {},
+  methods: {},
 };
 </script>
 

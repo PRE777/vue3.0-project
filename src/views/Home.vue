@@ -7,9 +7,9 @@
       <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
       <div class="bg"></div>
 
-      <select v-model="themeClass">
-        <option value="theme-default">default</option>
-        <option value="theme-night">night</option>
+      <select v-model="theme">
+        <option value="default">default</option>
+        <option value="night">night</option>
         <!-- <option value="blue">Blue</option> -->
       </select>
     </div>
@@ -24,8 +24,11 @@ export default {
   name: "Home",
   data() {
     return {
-      themeClass: "theme-default",
+      // theme: "default",
     };
+  },
+  created() {},
+  methods: {
   },
   components: {
     HelloWorld,

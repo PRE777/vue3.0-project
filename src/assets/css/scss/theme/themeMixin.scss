@@ -1,4 +1,5 @@
-@import "./themeVariable.scss"; // 获取主题
+ // 获取主题
+@import "./themeVariable.scss";
 
 @mixin themify($themes: $themes) {
   @each $theme-name, $map in $themes {
