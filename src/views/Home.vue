@@ -34,9 +34,6 @@ export default {
     HelloWorld,
   },
   computed: {
-    // themeClass() {
-    //   return `theme-${this.theme}`;
-    // },
   },
 };
 </script>

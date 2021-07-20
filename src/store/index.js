@@ -5,7 +5,7 @@ const projectTheme = {
   namespaced: true, // 避免存在相同属性
 
   state: {
-    theme: "default", // 默认主题是 default
+    theme: "default", // 默认主题是 default,night
   },
   getters: {
     getProjectTheme(state) {
