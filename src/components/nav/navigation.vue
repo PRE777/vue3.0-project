@@ -37,10 +37,6 @@ export default {
     logoClicked() {
       debugger;
     },
-    // selectChange() {
-    //   let a = this.theme;
-    //   debugger;
-    // },
   },
 };
 </script>
@@ -55,7 +51,9 @@ export default {
   //   background: rgb(71, 136, 136);
   @include themify($themes) {
     background: themed("background");
-    color: themed("font-color");
+    color: themed("nav-font-color");
+    font-size: themed("nav-font-size");
+    box-shadow: 0 2px 4px 0 themed("nav-shadow-color");
   }
   .logo {
     display: flex;

@@ -4,21 +4,44 @@ $mbgc: red; //主题背景色
 
 // 默认主题
 $theme-default: (
+  // 默认背景颜色
+  background: #fff,
+  // 底衬色
+  foil-bg: rgb(249, 247, 254),
+  // 默认字体颜色
   font-color: #000,
+  // 默认字体大小
   font-size: 14px,
-  background: #f9f6f6,
-  nav-font-color: #303c4f,
   // 导航栏字体颜色
-  nav-font-size: 16px,
+  nav-font-color: #303c4f,
   // 导航栏字体大小
-  nav-font-size-small: 14px,
+  nav-font-size: 16px,
   // 导航栏字体小号
-
+  nav-font-size-small: 14px,
+  // 导航栏阴影
+  nav-shadow-color: rgba(191, 191, 191, 0.5)
 );
 
 // 暗夜模式
 $theme-night: (
-  font-color: #fff,
+  // font-color: #fff,
+  // font-size: 14px,
+  // background: rgb(102, 98, 98),
+
+  // 默认背景颜色
+  background:  rgb(102, 98, 98),
+  // 底衬色
+  foil-bg: rgb(201, 198, 207),
+  // 默认字体颜色
+  font-color: #000,
+  // 默认字体大小
   font-size: 14px,
-  background: rgb(102, 98, 98),
+  // 导航栏字体颜色
+  nav-font-color: #d3d9e4,
+  // 导航栏字体大小
+  nav-font-size: 16px,
+  // 导航栏字体小号
+  nav-font-size-small: 14px,
+  // 导航栏阴影
+  nav-shadow-color: rgba(191, 191, 191, 0.5)
 );

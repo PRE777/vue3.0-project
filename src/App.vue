@@ -1,19 +1,17 @@
 <template>
-  <div id="app" :class="themeClass">
-    <!-- <navigation-component /> -->
-    <!-- <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div> -->
-    <router-view />
-  </div>
+  <el-container id="app" :class="themeClass">
+    <el-header><navigation-component /></el-header>
+    <el-main>
+      <router-view />
+    </el-main>
+  </el-container>
 </template>
 
 <script>
-// import navigationComponent from "./components/nav/navigation.vue";
+import navigationComponent from "./components/nav/navigation.vue";
 export default {
   components: {
-    // navigationComponent,
+    navigationComponent,
   },
   data() {
     return {};
@@ -33,7 +31,6 @@ body {
   height: 100%;
   width: 100%;
   margin: 0px;
-  background: rgba(136, 255, 0, 0.774);
   position: relative;
   overflow: hidden;
 }
@@ -43,13 +40,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  // height: 100%;
+  margin: 0px;
+  height: 100%;
   // min-width: 1200px;
   // min-height: 600px;
-  // margin: 0px;
-  // position: relative;
+  position: relative;
 }
-
+.el-header {
+  padding: 0;
+  box-shadow: 0 2px 4px 0 rgba(191,191,191,0.50);
+}
+.el-main {
+  padding: 10px;
+  @include themify($themes) {
+    background: themed("foil-bg");
+    color: themed("font-color");
+  }
+}
 // #nav {
 //   padding: 30px;
 
