@@ -1,52 +1,49 @@
 <template>
-  <div class="home" :class="themeClass">
-    <div class="app-container">
-      <p>试试手动多多多多多多多</p>
-      <img alt="Vue logo" src="../assets/logo.png" />
-      <img alt="Vue logo" src="../assets/lion.jpeg" />
-      <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-      <div class="bg"></div>
-
-      <select v-model="theme">
-        <option value="default">default</option>
-        <option value="night">night</option>
-        <!-- <option value="blue">Blue</option> -->
-      </select>
-    </div>
-  </div>
+  <el-container>
+    <el-header><navigation-component /></el-header>
+    <el-main>
+      <div class="app-container">
+        <span>阿打算的发生大似懂非懂的发生的发生大发撒大声地</span>
+        <br />
+        <select v-model="theme">
+          <option value="default">default</option>
+          <option value="night">night</option>
+        </select>
+      </div>
+    </el-main>
+  </el-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import navigationComponent from "../components/nav/navigation.vue";
 export default {
-  name: "Home",
   data() {
-    return {
-      // theme: "default",
-    };
+    return {};
   },
   created() {},
-  methods: {
-  },
+  mounted() {},
+  methods: {},
   components: {
-    HelloWorld,
+    navigationComponent,
   },
-  computed: {
-  },
+  computed: {},
 };
 </script>
 <style lang="scss" scoped>
+.el-header {
+  padding: 0;
+}
 .app-container {
+  height: 400px;
   @include themify($themes) {
     background: themed("background");
     color: themed("font-color");
   }
+  // overflow: scroll;
 }
 .bg {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 200px;
   background: url("../assets/lion.jpeg");
 }
 </style>

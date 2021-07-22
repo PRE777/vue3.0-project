@@ -61,6 +61,7 @@ module.exports = {
       .set("assets", path.resolve("src/assets"))
       .set("components", path.resolve("src/components"))
       .set("js", path.resolve("src/assets/js"))
+      .set("imgs", path.resolve("src/assets/imgs"))
       .set("https", path.resolve("src/https"))
       .set("static", path.resolve("src/static"));
 
@@ -70,7 +71,7 @@ module.exports = {
       .rule("images")
       .use("url-loader")
       .loader("url-loader")
-      .tap((options) => Object.assign(options, { limit: 1024 * 20 }));
+      .tap((options) => Object.assign(options, { limit: 1024 * 10 }));
   },
   //   configureWebpack: {
   //     output: {
