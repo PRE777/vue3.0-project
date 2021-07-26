@@ -43,15 +43,19 @@ body {
   margin: 0px;
   height: 100%;
   // min-width: 1200px;
+  min-width: 920px;
   // min-height: 600px;
   position: relative;
 }
 .el-header {
   padding: 0;
-  box-shadow: 0 2px 4px 0 rgba(191,191,191,0.50);
+  height: 60px;
+  // @include themify($themes) {
+  //   box-shadow: 0 2px 4px 0 themed("nav-shadow-color");
+  // }
 }
 .el-main {
-  padding: 10px;
+  padding: 5px;
   @include themify($themes) {
     background: themed("foil-bg");
     color: themed("font-color");
