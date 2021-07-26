@@ -114,7 +114,16 @@ module.exports = {
         maxEntrypointSize: 10000000,
         maxAssetSize: 30000000,
       };
-
+      config.optimization.splitChunks = {
+        cacheGroups: {
+          commons: {
+            name: "commons", //提取出来的文件命名
+            chunks: "initial", //initial表示提取入口文件的公共部分
+            minChunks: 2, //表示提取公共部分最少的文件数
+            minSize: 0, //表示提取公共部分最小的大小
+          },
+        },
+      };
       config.plugins.push(
         ...[
           // moment/locale 上下文里符合 /zh-cn|zh-hk|en/ 表达式的文件，因此也只会打包这几种本地化内容

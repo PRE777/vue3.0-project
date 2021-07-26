@@ -35,10 +35,14 @@ export default {
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+  // overflow: auto;
 }
 .bg {
   width: 300px;
   height: 500px;
-  background: url("../assets/lion.jpeg");
+  background-image: url("../assets/lion.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 </style>

@@ -7,7 +7,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --mode prod",
     "build--qa": "vue-cli-service build --mode qa",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "webpack": "webpack --version"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -33,6 +34,7 @@
     "prettier": "^2.2.1",
     "sass-loader": "^8.0.2",
     "sass-resources-loader": "^2.2.3",
-    "uglifyjs-webpack-plugin": "^2.2.0"
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack-cli": "^4.7.2"
   }
 }
