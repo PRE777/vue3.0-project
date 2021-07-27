@@ -7,10 +7,9 @@
         @click="logoClicked"
       />
     </div>
-    <div class="product">
-      <span class="arrow" @mouseenter="mouseEnter" @mouseleave="mouseLeave"
-        >产品大全&nbsp;
-      </span>
+    <!-- <div class="product" @mouseenter="mouseEnter" @mouseleave="mouseLeave"> -->
+    <div class="product" @mouseenter="mouseEnter" @mouseleave="mouseLeave">
+      <span class="arrow">产品大全&nbsp; </span>
     </div>
     <div class="nav user">
       <select v-model="theme" @change="selectChange">
@@ -18,9 +17,6 @@
         <option value="night">night</option>
       </select>
     </div>
-    <transition name="slide-fade">
-      <product-menu v-if="productMenuShow" />
-    </transition>
   </div>
 </template>
 <script>
@@ -30,9 +26,7 @@ export default {
     productMenu,
   },
   data() {
-    return {
-      productMenuShow: false,
-    };
+    return {};
   },
   created() {},
 
@@ -46,11 +40,11 @@ export default {
     },
     mouseEnter() {
       console.log("mouseEnter");
-      // this.productMenuShow = true;
+      this.$emit("productMenuToggle", true);
     },
     mouseLeave() {
       console.log("mouseLeave");
-      // this.productMenuShow = false;
+      this.$emit("productMenuToggle", false);
     },
   },
 };
@@ -85,6 +79,7 @@ export default {
   min-width: 100px;
   justify-content: center;
   cursor: pointer;
+  background-color: rgb(255, 238, 0);
   .arrow::after {
     position: absolute;
     top: 23px;
@@ -105,19 +100,5 @@ export default {
   width: 100%;
   justify-content: flex-end;
   padding-right: 20px;
-}
-
-
-.slide-fade-enter-active {
-  transition: all 0.5s ease-in;
-  transform: translateY(0)
-}
-.slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for below version 2.1.8 */ {
-  transform: translateY(-100%);
-  // opacity: 0;
 }
 </style>

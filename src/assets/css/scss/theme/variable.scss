@@ -6,6 +6,8 @@ $mbgc: red; //主题背景色
 $theme-default: (
   // 默认背景颜色
   background: #fff,
+  // 默认边框阴影颜色
+  shadow-color: rgba(200, 218, 255, 0.5),
   // 底衬色
   foil-bg: rgb(249, 247, 254),
   // 默认字体颜色
@@ -27,9 +29,8 @@ $theme-night: (
   // font-color: #fff,
   // font-size: 14px,
   // background: rgb(102, 98, 98),
-
   // 默认背景颜色
-  background:  rgb(102, 98, 98),
+  background: rgb(102, 98, 98),
   // 底衬色
   foil-bg: rgb(201, 198, 207),
   // 默认字体颜色
