@@ -40,7 +40,6 @@ export default {
         this.$nextTick(() => {
           this.div = document.getElementById("product-menu");
         });
-        setTimeout(() => {}, 500);
       } else {
         this.$nextTick(() => {
           if (this.div == null) {
@@ -56,22 +55,22 @@ export default {
           let divx2 = this.div.offsetLeft + this.div.offsetWidth;
           let divy2 =
             this.div.offsetParent.offsetTop - 4 + this.div.offsetHeight;
+          let product = document.getElementById("product");
+          let productWidth = product.offsetWidth;
           if (
             divx1 <= x &&
-            x <= divx1 + 100 &&
+            x <= divx1 + productWidth &&
             0 < y &&
             divx1 <= x &&
             x <= divx2 &&
             divy1 <= y + 4 &&
             y <= divy2
           ) {
-            let product = document.getElementById("product");
             this.div.onmouseleave = () => {
               let event = window.event;
               let x = event.clientX;
               let y = event.clientY;
               let productLeft = product.offsetLeft;
-              let productWidth = product.offsetWidth;
               let productHeight = product.offsetHeight;
               if (
                 productLeft <= x &&

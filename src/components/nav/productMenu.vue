@@ -14,10 +14,7 @@ export default {
   created() {},
   mounted() {},
   methods: {},
-  destroyed() {
-    console.log(111111111111);
-    // document.onmouseout = null;
-  },
+  destroyed() {},
 };
 </script>
 

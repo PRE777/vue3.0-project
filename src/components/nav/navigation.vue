@@ -7,8 +7,12 @@
         @click="logoClicked"
       />
     </div>
-    <!-- <div class="product" @mouseenter="mouseEnter" @mouseleave="mouseLeave"> -->
-    <div id="product" class="product" @mouseenter="mouseEnter" @mouseleave="mouseLeave">
+    <div
+      id="product"
+      class="product"
+      @mouseenter="mouseEnter"
+      @mouseleave="mouseLeave"
+    >
       <span class="arrow">产品大全&nbsp; </span>
     </div>
     <div class="nav user">
@@ -39,7 +43,7 @@ export default {
       debugger;
     },
     mouseEnter() {
-      console.log("mouseEnter");
+      // console.log("mouseEnter");
       this.$emit("productMenuToggle", true);
     },
     mouseLeave() {
