@@ -25,6 +25,7 @@ export default {
   data() {
     return {
       productMenuShow: false,
+      div: null,
     };
   },
   computed: {},
@@ -34,59 +35,60 @@ export default {
   mounted() {},
   methods: {
     productMenuToggle(val) {
-      let div = null;
       if (val) {
         this.productMenuShow = val;
+        this.$nextTick(() => {
+          this.div = document.getElementById("product-menu");
+        });
+        setTimeout(() => {}, 500);
       } else {
-        // this.$nextTick(() => {
-        div = document.getElementById("product-menu");
-        if (div == null) {
-          this.productMenuShow = false;
-          return;
-        }
-        debugger;
-        document.onmouseout = (event) => {
+        this.$nextTick(() => {
+          if (this.div == null) {
+            this.productMenuShow = false;
+            return;
+          }
+          let event = window.event;
           let x = event.clientX;
           let y = event.clientY;
-          let divx1 = div.offsetLeft;
-          let divy1 = div.offsetParent.offsetTop;
-          let divW = div.offsetWidth;
-          let divH = div.offsetHeight;
-
-          let newX = x - divx1;
-          let newY = y - divy1;
-          if (newX <= divW && 0 < newX && newY <= divH && 0 < newY) {
-            // 此时在div中 不做处理
+          // console.log(`x=${x},y=${y}`);
+          let divx1 = this.div.offsetLeft;
+          let divy1 = this.div.offsetParent.offsetTop;
+          let divx2 = this.div.offsetLeft + this.div.offsetWidth;
+          let divy2 =
+            this.div.offsetParent.offsetTop - 4 + this.div.offsetHeight;
+          if (
+            divx1 <= x &&
+            x <= divx1 + 100 &&
+            0 < y &&
+            divx1 <= x &&
+            x <= divx2 &&
+            divy1 <= y + 4 &&
+            y <= divy2
+          ) {
+            let product = document.getElementById("product");
+            this.div.onmouseleave = () => {
+              let event = window.event;
+              let x = event.clientX;
+              let y = event.clientY;
+              let productLeft = product.offsetLeft;
+              let productWidth = product.offsetWidth;
+              let productHeight = product.offsetHeight;
+              if (
+                productLeft <= x &&
+                x <= productLeft + productWidth &&
+                0 <= y &&
+                y <= productHeight + 4
+              ) {
+                // 在“产品大全”按钮内部
+              } else {
+                this.productMenuShow = false;
+                this.div.onmouseleave = null;
+              }
+            };
           } else {
-            // 不在div中，隐藏div
             this.productMenuShow = false;
-            document.onmouseout = null;
           }
-
-          // let divx1 = div.offsetLeft;
-          // let divy1 = div.screenY;
-          // let divx2 = div.offsetLeft + div.offsetWidth;
-          // let divy2 = div.screenY + div.offsetHeight;
-          // if (x < divx1 || x > divx2 || y < divy1 || y > divy2) {
-          //   // 不在div上。。
-          //   this.productMenuShow = false;
-          //   document.onmouseout = null;
-          // }
-        };
-        // document.onmouseout = (event) => {
-        //   let x = event.clientX;
-        //   let y = event.clientY;
-        //   let divx1 = div.offsetLeft;
-        //   let divy1 = div.screenY;
-        //   let divx2 = div.offsetLeft + div.offsetWidth;
-        //   let divy2 = div.screenY + div.offsetHeight;
-        //   if (x < divx1 || x > divx2 || y < divy1 || y > divy2) {
-        //     // 不在div上。。
-        //     this.productMenuShow = false;
-        //     document.onmouseout = null;
-        //   }
-        // };
-        // });
+        });
       }
     },
   },
@@ -125,6 +127,7 @@ body {
 }
 .el-main {
   padding: 5px;
+  box-sizing: border-box;
   position: relative;
   @include themify($themes) {
     background: themed("foil-bg");

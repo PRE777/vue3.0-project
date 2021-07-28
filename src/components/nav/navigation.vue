@@ -1,5 +1,5 @@
 <template>
-  <div class="app-navigation">
+  <div id="app-navigation" class="app-navigation">
     <div class="logo">
       <img
         src="@/assets/imgs/common/logo.svg"
@@ -8,7 +8,7 @@
       />
     </div>
     <!-- <div class="product" @mouseenter="mouseEnter" @mouseleave="mouseLeave"> -->
-    <div class="product" @mouseenter="mouseEnter" @mouseleave="mouseLeave">
+    <div id="product" class="product" @mouseenter="mouseEnter" @mouseleave="mouseLeave">
       <span class="arrow">产品大全&nbsp; </span>
     </div>
     <div class="nav user">
@@ -43,7 +43,7 @@ export default {
       this.$emit("productMenuToggle", true);
     },
     mouseLeave() {
-      console.log("mouseLeave");
+      // console.log("mouseLeave");
       this.$emit("productMenuToggle", false);
     },
   },
