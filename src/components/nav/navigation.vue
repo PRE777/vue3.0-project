@@ -13,7 +13,8 @@
       @mouseenter="mouseEnter"
       @mouseleave="mouseLeave"
     >
-      <span class="arrow">产品大全&nbsp; </span>
+      <!-- &nbsp; -->
+      <span>产品大全 </span>
     </div>
     <div class="nav user">
       <select v-model="theme" @change="selectChange">
@@ -58,6 +59,7 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
+  max-width: $maxWidth;
   height: 56px;
   margin: auto;
   @include themify($themes) {
@@ -71,6 +73,7 @@ export default {
   display: flex;
   align-items: center;
   height: 100%;
+  position: relative;
 }
 .logo {
   @extend .nav;
@@ -83,10 +86,10 @@ export default {
   min-width: 100px;
   justify-content: center;
   cursor: pointer;
-  background-color: rgb(255, 238, 0);
-  .arrow::after {
+  span::after {
     position: absolute;
     top: 23px;
+    right: 6px;
     width: 6px;
     height: 6px;
     @include themify($themes) {

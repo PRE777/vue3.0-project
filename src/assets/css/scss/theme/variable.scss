@@ -1,5 +1,5 @@
 // 定义常用颜色变量表
-
+$maxWidth:1800px;
 $mbgc: red; //主题背景色
 
 // 默认主题
@@ -9,7 +9,7 @@ $theme-default: (
   // 默认边框阴影颜色
   shadow-color: rgba(200, 218, 255, 0.5),
   // 底衬色
-  foil-bg: rgb(249, 247, 254),
+  foil-bg: #efefef,
   // 默认字体颜色
   font-color: #000,
   // 默认字体大小
@@ -34,7 +34,7 @@ $theme-night: (
   // 底衬色
   foil-bg: rgb(201, 198, 207),
   // 默认字体颜色
-  font-color: #000,
+  font-color: rgba(216, 230, 221, 0.527),
   // 默认字体大小
   font-size: 14px,
   // 导航栏字体颜色

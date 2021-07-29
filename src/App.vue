@@ -1,6 +1,6 @@
 <template>
   <el-container id="app" :class="themeClass">
-    <el-header>
+    <el-header class="el-header">
       <navigation-component
         v-on:productMenuToggle="productMenuToggle"
       ></navigation-component
@@ -18,6 +18,8 @@
 import navigationComponent from "./components/nav/navigation.vue";
 import productMenu from "./components/nav/productMenu.vue";
 export default {
+  prodBtn: null,
+  prodDiv: null,
   components: {
     navigationComponent,
     productMenu,
@@ -25,7 +27,6 @@ export default {
   data() {
     return {
       productMenuShow: false,
-      div: null,
     };
   },
   computed: {},
@@ -38,11 +39,13 @@ export default {
       if (val) {
         this.productMenuShow = val;
         this.$nextTick(() => {
-          this.div = document.getElementById("product-menu");
+          this.prodDiv = document.getElementById("product-menu");
+          this.prodBtn = document.getElementById("product");
+          this.prodDiv.style.left = `${this.prodBtn.offsetLeft}px`;
         });
       } else {
         this.$nextTick(() => {
-          if (this.div == null) {
+          if (this.prodDiv == null) {
             this.productMenuShow = false;
             return;
           }
@@ -50,11 +53,11 @@ export default {
           let x = event.clientX;
           let y = event.clientY;
           // console.log(`x=${x},y=${y}`);
-          let divx1 = this.div.offsetLeft;
-          let divy1 = this.div.offsetParent.offsetTop;
-          let divx2 = this.div.offsetLeft + this.div.offsetWidth;
+          let divx1 = this.prodDiv.offsetLeft;
+          let divy1 = this.prodDiv.offsetParent.offsetTop;
+          let divx2 = this.prodDiv.offsetLeft + this.prodDiv.offsetWidth;
           let divy2 =
-            this.div.offsetParent.offsetTop - 4 + this.div.offsetHeight;
+            this.prodDiv.offsetParent.offsetTop - 4 + this.prodDiv.offsetHeight;
           let product = document.getElementById("product");
           let productWidth = product.offsetWidth;
           if (
@@ -66,7 +69,7 @@ export default {
             divy1 <= y + 4 &&
             y <= divy2
           ) {
-            this.div.onmouseleave = () => {
+            this.prodDiv.onmouseleave = () => {
               let event = window.event;
               let x = event.clientX;
               let y = event.clientY;
@@ -81,7 +84,7 @@ export default {
                 // 在“产品大全”按钮内部
               } else {
                 this.productMenuShow = false;
-                this.div.onmouseleave = null;
+                this.prodDiv.onmouseleave = null;
               }
             };
           } else {
@@ -103,28 +106,41 @@ body {
   margin: 0px;
   position: relative;
   overflow: hidden;
+  @include themify($themes) {
+    background-color: themed("foil-bg");
+  }
+  // overflow-y: scroll;
+  // overflow-x: hidden;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  // color: #2c3e50;
   margin: 0px;
   height: 100%;
   // min-width: 1200px;
-  min-width: 920px;
-  // min-height: 600px;
+  min-width: 1200px;
+  // min-height: 700px;
   position: relative;
+}
+.el-container {
+  @include themify($themes) {
+    background-color: themed("foil-bg");
+  }
 }
 .el-header {
   padding: 0;
   height: 60px;
-  // @include themify($themes) {
-  //   box-shadow: 0 2px 4px 0 themed("nav-shadow-color");
-  // }
+  @include themify($themes) {
+    background-color: themed("foil-bg");
+    box-shadow: 0 2px 4px 0 themed("nav-shadow-color");
+  }
 }
 .el-main {
+  display: flex;
+  justify-content: center;
   padding: 5px;
   box-sizing: border-box;
   position: relative;

@@ -1,57 +1,54 @@
 <template>
   <div class="app-container">
-    <span @mouseenter="mouseEnter" @mouseleave="mouseLeave">阿打算的发生大似懂非懂的发生的发生大发撒大声地</span>
+    <!-- <span >阿打算的发生大似懂非懂的发生的发生大发撒大声地</span>
     <br />
     <img alt="Vue logo" height="700" src="../assets/lion.jpeg" />
     <div class="bg"></div>
     <select v-model="theme">
       <option value="default">default</option>
       <option value="night">night</option>
-    </select>
-    <!-- <transition name="slide-fade">
-      <product-menu v-if="productMenuShow" />
-    </transition> -->
+    </select> -->
+    <div class="main-container"></div>
+    <div class="right-container"></div>
   </div>
 </template>
 
 <script>
 import navigationComponent from "../components/nav/navigation.vue";
-// import productMenu from "../components/nav/productMenu.vue";
 
 export default {
   components: {
     navigationComponent,
-    // productMenu,
   },
   data() {
-    return {
-      // productMenuShow: true,
-    };
+    return {};
   },
   created() {},
   mounted() {},
-  methods: {
-    mouseEnter() {
-      console.log("mouseEnter");
-      this.productMenuShow = true;
-    },
-    mouseLeave() {
-      console.log("mouseLeave");
-      this.productMenuShow = false;
-    },
-  },
+  methods: {},
 
   computed: {},
 };
 </script>
 <style lang="scss" scoped>
 .app-container {
+  display: flex;
   width: 100%;
+  max-width: $maxWidth;
   height: 100%;
-  // overflow-x: hidden;
-  // overflow-y: scroll;
-  overflow: scroll;
+  overflow-y: scroll;
   position: relative;
+}
+.main-container {
+  display: flex;
+  width: 100%;
+  // height: 100%;
+  background-color: red;
+}
+.right-container {
+  display: flex;
+  width: 200px;
+  background-color: rosybrown;
 }
 .bg {
   width: 300px;
@@ -61,5 +58,4 @@ export default {
   background-size: cover;
   // background-attachment: fixed;
 }
-
 </style>

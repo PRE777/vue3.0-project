@@ -9,10 +9,12 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+    };
   },
   created() {},
-  mounted() {},
+  mounted() {
+  },
   methods: {},
   destroyed() {},
 };
@@ -21,7 +23,6 @@ export default {
 <style lang="scss" scoped>
 $contain-height: 200px;
 $contain-width: 500px;
-$contain-left: 160px;
 .prod-menu {
   display: flex;
   @include themify($themes) {
@@ -33,9 +34,10 @@ $contain-left: 160px;
   height: $contain-height;
   position: absolute;
   top: 0;
-  left: $contain-left;
+//   left: $contain-left;
   animation: slideUpDown 0.5s 1;
 }
+
 @keyframes slideUpDown {
   0% {
     top: -$contain-height;
