@@ -85,7 +85,7 @@ export default {
     justify-content: left;
     width: 100%;
     height: 100%;
-    padding: 6px 16px;
+    padding: 6px 6px 6px 16px;
     box-sizing: border-box;
     flex-wrap: wrap;
     column-count: 4;
