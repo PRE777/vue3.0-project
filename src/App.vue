@@ -39,9 +39,11 @@ export default {
       if (val) {
         this.productMenuShow = val;
         this.$nextTick(() => {
+          console.log(12333);
           this.prodDiv = document.getElementById("product-menu");
           this.prodBtn = document.getElementById("product");
           this.prodDiv.style.left = `${this.prodBtn.offsetLeft}px`;
+          // this.prodDiv.style.top = `${this.prodBtn.offsetHeight}px`;
         });
       } else {
         this.$nextTick(() => {
@@ -101,29 +103,26 @@ export default {
 @import url("./assets/css/animation.css");
 html,
 body {
-  height: 100%;
-  width: 100%;
   margin: 0px;
   position: relative;
-  overflow: hidden;
   @include themify($themes) {
     background-color: themed("foil-bg");
   }
   // overflow-y: scroll;
   // overflow-x: hidden;
+  // overflow: scroll;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  // color: #2c3e50;
   margin: 0px;
   height: 100%;
-  // min-width: 1200px;
-  min-width: 1200px;
-  // min-height: 700px;
+  min-width: $minWidth;
+  max-width: $maxWidth;
   position: relative;
+  // overflow: scroll;
 }
 .el-container {
   @include themify($themes) {
@@ -141,7 +140,7 @@ body {
 .el-main {
   display: flex;
   justify-content: center;
-  padding: 5px;
+  padding: 0px;
   box-sizing: border-box;
   position: relative;
   @include themify($themes) {
@@ -149,17 +148,4 @@ body {
     color: themed("font-color");
   }
 }
-
-// #nav {
-//   padding: 30px;
-
-//   a {
-//     font-weight: bold;
-//     color: #7c0b11;
-
-//     &.router-link-exact-active {
-//       color: #42b983;
-//     }
-//   }
-// }
 </style>

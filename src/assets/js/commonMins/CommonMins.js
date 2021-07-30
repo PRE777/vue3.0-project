@@ -21,7 +21,10 @@ export default {
       this.$store.dispatch("projectTheme/updateProjectTheme", nV);
     },
   },
-  created() {},
+  created() {
+    // debugger;
+    // window.scrollTo(0, 0);
+  },
   mounted() {
     console.log("mixin mounted");
   },

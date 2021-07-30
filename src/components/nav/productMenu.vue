@@ -9,12 +9,10 @@
 <script>
 export default {
   data() {
-    return {
-    };
+    return {};
   },
   created() {},
-  mounted() {
-  },
+  mounted() {},
   methods: {},
   destroyed() {},
 };
@@ -34,13 +32,14 @@ $contain-width: 500px;
   height: $contain-height;
   position: absolute;
   top: 0;
-//   left: $contain-left;
+  //   left: $contain-left;
   animation: slideUpDown 0.5s 1;
 }
 
 @keyframes slideUpDown {
   0% {
     top: -$contain-height;
+    // top: -140px;
   }
   100% {
     top: 0;
