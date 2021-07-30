@@ -1,6 +1,6 @@
 // 定义常用颜色变量表
-$maxWidth:1800px;
-$minWidth:1366px;
+$maxWidth: 1800px;
+$minWidth: 1366px;
 $mbgc: red; //主题背景色
 
 // 默认主题
@@ -22,7 +22,13 @@ $theme-default: (
   // 导航栏字体小号
   nav-font-size-small: 14px,
   // 导航栏阴影
-  nav-shadow-color: rgba(191, 191, 191, 0.5)
+  nav-shadow-color: rgba(191, 191, 191, 0.5),
+  // 主界面模块 title
+  home-title-color: #061c53,
+  // 主界面模块元素背景色
+  home-elem-bg: #f6f9ff,
+  // 主界面模块元素字体颜色
+  home-ele-font-color1: #666666,
 );
 
 // 暗夜模式

@@ -1,7 +1,8 @@
 <template>
   <div class="app-container">
     <div class="main-container">
-      <div style="background: green; width: 100%; height: 1200px">left</div>
+      <funcnav-component />
+      <!-- <div style="background: green; width: 100%; height: 1200px">left</div> -->
     </div>
     <div class="right-container">
       right
@@ -12,10 +13,11 @@
 
 <script>
 import navigationComponent from "../components/nav/navigation.vue";
-
+import funcnavComponent from "../components/home/funcnav.vue";
 export default {
   components: {
     navigationComponent,
+    funcnavComponent,
   },
   data() {
     return {};
@@ -43,18 +45,22 @@ export default {
 }
 .main-container {
   display: flex;
+  flex-direction: column;
   float: left;
   width: 100%;
+  padding: 5px 5px 5px 25px;
+  box-sizing: border-box;
   // height: 1200px;
-  background-color: red;
+  // background-color: red;
 }
 .right-container {
   // display: flex;
   float: left;
-  // width: 370px;
   min-width: 370px;
   height: 100%;
+  padding: 5px;
   background-color: rosybrown;
+  box-sizing: border-box;
 }
 @media screen and (min-width: 1800px) {
   .main-container {
