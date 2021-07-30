@@ -1,6 +1,8 @@
 <template>
   <div class="app-container">
-    <div class="main-container">left</div>
+    <div class="main-container">
+      <div style="background: green; width: 100%; height: 1200px">left</div>
+    </div>
     <div class="right-container">
       right
       <el-button @click="buttonClicked"> testPush</el-button>
@@ -37,13 +39,13 @@ export default {
   // height: 100%;
   // overflow-y: scroll;
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
 }
 .main-container {
-  // display: flex;
+  display: flex;
   float: left;
   width: 100%;
-  height: 1200px;
+  // height: 1200px;
   background-color: red;
 }
 .right-container {
