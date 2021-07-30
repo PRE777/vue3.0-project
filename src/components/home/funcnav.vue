@@ -11,7 +11,7 @@
         :key="index"
       >
         <img :src="item.icon" alt="icon" width="20" height="20" />
-        {{ item.title }}
+        {{ `&nbsp;${item.title}` }}
       </div>
     </div>
   </div>
@@ -96,6 +96,7 @@ export default {
       display: flex;
       float: left;
       align-items: center;
+      padding-left: 5px;
       box-sizing: border-box;
       margin: 10px var(--right) 10px 0px;
       height: 50px;
