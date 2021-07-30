@@ -71,8 +71,8 @@ export default {
     width: 100%;
     height: 40px;
     text-align: left;
-    line-height: 20px;
-    padding: 10px 16px;
+    line-height: 25px;
+    padding: 10px 16px 5px 16px;
     box-sizing: border-box;
     font-family: SourceHanSansSC-Medium;
     letter-spacing: 0;
@@ -98,7 +98,7 @@ export default {
       align-items: center;
       padding-left: 5px;
       box-sizing: border-box;
-      margin: 10px var(--right) 10px 0px;
+      margin: 0px var(--right) 15px 0px;
       height: 50px;
       font-size: 15px;
       width: calc((100% - var(--right) * 4) / 4);
