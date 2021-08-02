@@ -2,9 +2,9 @@
   <div class="app-container">
     <div class="main-container">
       <funcnav-component />
-      <!-- <div style="background: green; width: 100%; height: 1200px">left</div> -->
       <mysource-component />
       <visual-component />
+      <homefoot-component />
     </div>
     <div class="right-container">
       right
@@ -18,12 +18,15 @@ import navigationComponent from "../components/nav/navigation.vue";
 import funcnavComponent from "../components/home/funcnav.vue";
 import mysourceComponent from "../components/home/mysource.vue";
 import visualComponent from "../components/home/visualInstance.vue";
+import homefootComponent from "../components/home/homeFoot.vue";
 export default {
+  name: "home",
   components: {
     navigationComponent,
     funcnavComponent,
     mysourceComponent,
     visualComponent,
+    homefootComponent,
   },
   data() {
     return {};
@@ -54,7 +57,7 @@ export default {
   flex-direction: column;
   float: left;
   width: 100%;
-  padding: 5px 5px 5px 25px;
+  padding: 5px 5px 25px 25px;
   box-sizing: border-box;
   // height: 1200px;
   // background-color: red;
@@ -68,6 +71,7 @@ export default {
   background-color: rosybrown;
   box-sizing: border-box;
 }
+
 @media screen and (min-width: 1800px) {
   .main-container {
     max-width: 1430px;
