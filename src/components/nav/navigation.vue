@@ -86,6 +86,7 @@ export default {
   min-width: 100px;
   justify-content: center;
   cursor: pointer;
+  font-size: 15px;
   span::after {
     position: absolute;
     top: 23px;

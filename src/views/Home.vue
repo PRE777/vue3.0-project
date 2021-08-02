@@ -3,6 +3,8 @@
     <div class="main-container">
       <funcnav-component />
       <!-- <div style="background: green; width: 100%; height: 1200px">left</div> -->
+      <mysource-component />
+      <visual-component />
     </div>
     <div class="right-container">
       right
@@ -14,10 +16,14 @@
 <script>
 import navigationComponent from "../components/nav/navigation.vue";
 import funcnavComponent from "../components/home/funcnav.vue";
+import mysourceComponent from "../components/home/mysource.vue";
+import visualComponent from "../components/home/visualInstance.vue";
 export default {
   components: {
     navigationComponent,
     funcnavComponent,
+    mysourceComponent,
+    visualComponent,
   },
   data() {
     return {};
@@ -85,19 +91,4 @@ export default {
     min-width: 1366px;
   }
 }
-// @media (max-width: 1200px) {
-//   .main-container {
-//     max-width: 930px;
-//   }
-// }
-// @media (max-width: 820px) {
-//   .main-container {
-//     max-width: 820px;
-//   }
-// }
-// @media screen and (max-width: 1800px) {
-//   .main-container {
-//     min-width: 1020px;
-//   }
-// }
 </style>

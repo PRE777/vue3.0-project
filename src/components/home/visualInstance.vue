@@ -1,89 +1,68 @@
-// 功能导览
+// 可视化实例
+
 <template>
-  <div class="funcnav-container">
+  <div class="mysource-container" v-if="visualInstances.length != 0">
     <div class="title">
       <span>{{ title }}</span>
     </div>
-    <div class="func-content" @click="funcItemClicked">
+    <div class="visual-content" @click="visualInstanceClicked">
       <div
-        class="func-content-elem"
-        v-for="(item, index) in funcNavs"
+        class="visual-content-elem"
+        v-for="(item, index) in visualInstances"
         :key="index"
         :data-index="index"
       >
-        <img
-          :src="item.icon"
-          alt="icon"
-          width="20"
-          height="20"
-          :data-index="index"
-        />
-        {{ `&nbsp;${item.title}` }}
+        {{ item.name }}
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "funcnav",
+  name: "visualInstance",
   data() {
     return {
-      title: "功能导览",
-      funcNavs: [
+      title: "可视化实例",
+      visualInstances: [
         {
-          icon: require("../../assets/imgs/home/func-icon.svg"),
-          title: "网格数据接入",
+          name: "可视化图表-1",
           path: "",
         },
         {
-          icon: require("../../assets/imgs/home/func-icon.svg"),
-          title: "网格构建工具",
+          name: "可视化图表-2",
           path: "",
         },
         {
-          icon: require("../../assets/imgs/home/func-icon.svg"),
-          title: "网格数据引擎",
+          name: "可视化图表-3",
           path: "",
         },
-        {
-          icon: require("../../assets/imgs/home/func-icon.svg"),
-          title: "网格计算引擎",
-          path: "",
-        },
-        {
-          icon: require("../../assets/imgs/home/func-icon.svg"),
-          title: "网格图发布服务",
-        },
-        {
-          icon: require("../../assets/imgs/home/func-icon.svg"),
-          title: "网格数据可视化",
-          path: "",
-        },
-        {
-          icon: require("../../assets/imgs/home/func-icon.svg"),
-          title: "网格数据分发下载",
-          path: "",
-        },
+        // {
+        //   name: "可视化图表-4",
+        //   path: "",
+        // },
+        // {
+        //   name: "可视化图表-5",
+        //   path: "",
+        // },
       ],
     };
   },
-  created() {},
   mounted() {},
   methods: {
-    funcItemClicked(e) {
+    visualInstanceClicked(e) {
       const index = e.target.dataset.index * 1;
-      const path = this.funcNavs[index].path;
+      const path = this.sources[index].path;
       this.$router.push({ path });
     },
   },
 };
 </script>
 <style lang="scss" scoped>
-.funcnav-container {
+.mysource-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 210px;
+  max-height: 350px;
   margin-bottom: 16px;
   @include themify($themes) {
     box-shadow: 0 2px 4px 0 themed("nav-shadow-color");
@@ -102,15 +81,14 @@ export default {
       color: themed("home-title-color");
     }
   }
-  .func-content {
+  .visual-content {
     display: flex;
     justify-content: left;
     width: 100%;
     height: 100%;
-    padding: 6px 6px 6px 16px;
+    padding: 6px 6px 34px 16px;
     box-sizing: border-box;
     flex-wrap: wrap;
-    // column-count: 4;
     &-elem {
       --right: 13px;
       display: flex;
@@ -120,7 +98,7 @@ export default {
       padding-left: 5px;
       box-sizing: border-box;
       margin: 0px var(--right) 15px 0px;
-      height: 50px;
+      height: 120px;
       font-size: 14px;
       width: calc((100% - var(--right) * 4) / 4);
       @include themify($themes) {
