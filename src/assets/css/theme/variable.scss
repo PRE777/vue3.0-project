@@ -10,9 +10,9 @@ $theme-default: (
   // 默认边框阴影颜色
   shadow-color: rgba(200, 218, 255, 0.5),
   // 底衬色
-  foil-bg: #efefef,
+  foil-bg: #faf9fe,
   // 默认字体颜色
-  font-color: #000,
+  font-color: #666666,
   // 默认字体大小
   font-size: 14px,
   // 导航栏字体颜色
@@ -25,11 +25,20 @@ $theme-default: (
   nav-shadow-color: rgba(191, 191, 191, 0.5),
   // 主界面模块 title
   home-title-color: #061c53,
+  home-more-color: #7a7474,
   // 主界面模块元素背景色
   home-elem-bg: #f6f9ff,
   // 主界面模块元素字体颜色
-  home-ele-font-color1: #666666,
-  home-ele-font-color2: #4065e0
+  home-ele-font-color: #4065e0,
+  // 主界面用户信息
+  home-user-info-default-color: #aaaaaa,
+  home-user-info-nickname-color: #303c4f,
+  home-user-info-userId-color: #506585,
+  home-user-info-real-name-color: #71d35a,
+  home-user-info-unreal-name-color: red,
+  home-user-info-button-color: #fff,
+  home-user-info-button-background: #4065e0,
+  home-user-info-button-hover-background: #4085e0
 );
 
 // 暗夜模式

@@ -89,7 +89,6 @@ export default {
   .mysource-content {
     display: flex;
     justify-content: space-around;
-    // justify-content: center;
     width: 100%;
     height: 100%;
     padding: 6px 6px 6px 16px;
@@ -108,21 +107,17 @@ export default {
       width: calc((100% - var(--space) * 3 - var(--right)) / 4);
       @include themify($themes) {
         background: themed("home-elem-bg");
-        color: themed("home-ele-font-color1");
       }
       &-span1 {
         font-size: 20px;
         font-family: SourceHanSansSC-Normal;
         @include themify($themes) {
-          color: themed("home-ele-font-color2");
+          color: themed("home-ele-font-color");
         }
       }
       &-span2 {
         font-size: 14px;
-        font-family: SourceHanSansSC-Medium;
-        @include themify($themes) {
-          color: themed("home-ele-font-color1");
-        }
+        font-family: SourceHanSansSC-Normal;
       }
     }
   }

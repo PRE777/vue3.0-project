@@ -4,6 +4,7 @@
   <div class="mysource-container" v-if="visualInstances.length != 0">
     <div class="title">
       <span>{{ title }}</span>
+      <span class="more" @click="moreClicked">···</span>
     </div>
     <div class="visual-content" @click="visualInstanceClicked">
       <div
@@ -49,9 +50,12 @@ export default {
   },
   mounted() {},
   methods: {
+    // 更多
+    moreClicked() {},
+    // 可视化视图点击
     visualInstanceClicked(e) {
       const index = e.target.dataset.index * 1;
-      const path = this.sources[index].path;
+      const path = this.visualInstances[index].path;
       this.$router.push({ path });
     },
   },
@@ -77,8 +81,24 @@ export default {
     box-sizing: border-box;
     font-family: SourceHanSansSC-Medium;
     letter-spacing: 0;
+    position: relative;
     @include themify($themes) {
       color: themed("home-title-color");
+    }
+    .more {
+      position: absolute;
+      text-align: center;
+      width: 50px;
+      height: 40px;
+      line-height: 40px;
+      right: 15px;
+      top: 0px;
+      font-size: 30px;
+      letter-spacing: -5px;
+      cursor: pointer;
+      @include themify($themes) {
+        color: themed("home-more-color");
+      }
     }
   }
   .visual-content {
@@ -103,7 +123,6 @@ export default {
       width: calc((100% - var(--right) * 4) / 4);
       @include themify($themes) {
         background: themed("home-elem-bg");
-        color: themed("home-ele-font-color1");
       }
       cursor: pointer;
     }

@@ -125,7 +125,7 @@ export default {
       width: calc((100% - var(--right) * 4) / 4);
       @include themify($themes) {
         background: themed("home-elem-bg");
-        color: themed("home-ele-font-color1");
+        // color: themed("home-ele-font-color1");
       }
       cursor: pointer;
     }

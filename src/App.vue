@@ -103,10 +103,14 @@ export default {
 @import url("./assets/css/animation.css");
 html,
 body {
-  margin: 0px;
+  // height: 100%;
+  // width: 100%;
+  margin: 0 auto;
   position: relative;
+  font-family: SourceHanSansSC-Normal;
   @include themify($themes) {
     background-color: themed("foil-bg");
+    color: themed("font-color");
   }
   // overflow-y: scroll;
   // overflow-x: hidden;

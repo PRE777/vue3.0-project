@@ -2,19 +2,23 @@
   <div class="foot-container">
     <div class="developTool">
       <div class="title"><span>开发者工具</span></div>
-      <div class="developTool-content">
-        <span v-for="(item, index) in devTools" :key="index">{{
-          item.name
-        }}</span>
+      <div class="developTool-content" @click="devToolClicked">
+        <span
+          v-for="(item, index) in devTools"
+          :key="index"
+          :data-index="index"
+          >{{ item.name }}</span
+        >
       </div>
     </div>
     <div class="recommend">
       <div class="title"><span>推荐</span></div>
-      <div class="recommend-content">
+      <div class="recommend-content" @click="recommendClicked">
         <span
           style="width: 100%"
           v-for="(item, index) in recommends"
           :key="index"
+          :data-index="index"
           >{{ item.name }}</span
         >
       </div>
@@ -60,7 +64,18 @@ export default {
     };
   },
   mounted() {},
-  methods: {},
+  methods: {
+    devToolClicked(e) {
+      const index = e.target.dataset.index * 1;
+      const path = this.devTools[index].path;
+      this.$router.push({ path });
+    },
+    recommendClicked(e) {
+      const index = e.target.dataset.index * 1;
+      const path = this.recommends[index].path;
+      this.$router.push({ path });
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -74,9 +89,6 @@ export default {
   background: transparent;
   font-size: 13px;
   font-family: SourceHanSansSC-Normal;
-  @include themify($themes) {
-    color: themed("home-ele-font-color1");
-  }
   .title {
     width: 100%;
     height: 40px;
@@ -95,6 +107,7 @@ export default {
     text-align: left;
     float: left;
     width: 50%;
+    cursor: pointer;
   }
   .developTool {
     display: flex;
