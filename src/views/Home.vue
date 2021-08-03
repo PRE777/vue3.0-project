@@ -88,6 +88,7 @@ export default {
   flex-direction: column;
   float: left;
   min-width: 370px;
+  max-width: 370px;
   height: 100%;
   padding: 0 5px;
   // background-color: rosybrown;

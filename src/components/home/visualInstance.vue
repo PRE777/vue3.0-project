@@ -88,12 +88,12 @@ export default {
     .more {
       position: absolute;
       text-align: center;
-      width: 50px;
+      width: 30px;
       height: 40px;
       line-height: 40px;
-      right: 15px;
+      right: 20px;
       top: 0px;
-      font-size: 30px;
+      font-size: 25px;
       letter-spacing: -5px;
       cursor: pointer;
       @include themify($themes) {
