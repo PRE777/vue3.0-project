@@ -1,17 +1,19 @@
 <template>
-  <el-container id="app" :class="themeClass">
-    <el-header class="el-header">
-      <navigation-component
-        v-on:productMenuToggle="productMenuToggle"
-      ></navigation-component
-    ></el-header>
-    <el-main>
-      <router-view />
-      <transition name="slide-fade">
-        <product-menu v-if="productMenuShow" />
-      </transition>
-    </el-main>
-  </el-container>
+  <div id="app" :class="themeClass">
+    <el-container>
+      <el-header class="el-header">
+        <navigation-component
+          v-on:productMenuToggle="productMenuToggle"
+        ></navigation-component
+      ></el-header>
+      <el-main>
+        <router-view />
+        <transition name="slide-fade">
+          <product-menu v-if="productMenuShow" />
+        </transition>
+      </el-main>
+    </el-container>
+  </div>
 </template>
 
 <script>
@@ -103,18 +105,13 @@ export default {
 @import url("./assets/css/animation.css");
 html,
 body {
+  // display: flex;
+  // justify-content: center;
   // height: 100%;
   // width: 100%;
   margin: 0 auto;
   position: relative;
   font-family: SourceHanSansSC-Normal;
-  @include themify($themes) {
-    background-color: themed("foil-bg");
-    color: themed("font-color");
-  }
-  // overflow-y: scroll;
-  // overflow-x: hidden;
-  // overflow: scroll;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -125,21 +122,18 @@ body {
   height: 100%;
   min-width: $minWidth;
   max-width: $maxWidth;
+  // width: 100%;
   position: relative;
-  // overflow: scroll;
 }
 .el-container {
   @include themify($themes) {
     background-color: themed("foil-bg");
+    color: themed("font-color");
   }
 }
 .el-header {
   padding: 0;
   height: 60px;
-  @include themify($themes) {
-    background-color: themed("foil-bg");
-    box-shadow: 0 2px 4px 0 themed("nav-shadow-color");
-  }
 }
 .el-main {
   display: flex;
@@ -147,9 +141,6 @@ body {
   padding: 0px;
   box-sizing: border-box;
   position: relative;
-  @include themify($themes) {
-    background: themed("foil-bg");
-    color: themed("font-color");
-  }
+  overflow: hidden;
 }
 </style>

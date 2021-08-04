@@ -59,20 +59,20 @@ export default {
 <style lang="scss" scoped>
 @import url("../assets/css/home.css");
 .app-container {
-  // display: flex;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  padding: 5px 15px 25px 25px;
-  // height: 100%;
-  // overflow-y: scroll;
+  // width: $maxWidth;
+  margin: 5px 15px 25px 25px;
   position: relative;
   overflow: hidden;
 }
-.app-container::after {
-  height: 0;
-  clear: both;
-  display: block;
-  visibility: hidden;
-}
+// .app-container::after {
+//   height: 0;
+//   clear: both;
+//   display: block;
+//   visibility: hidden;
+// }
 .main-container {
   display: flex;
   flex-direction: column;
@@ -80,8 +80,6 @@ export default {
   width: 100%;
   padding-right: 5px;
   box-sizing: border-box;
-  // height: 1200px;
-  // background-color: red;
 }
 .right-container {
   display: flex;
@@ -91,7 +89,6 @@ export default {
   max-width: 370px;
   height: 100%;
   padding: 0 5px;
-  // background-color: rosybrown;
   box-sizing: border-box;
 }
 
@@ -109,10 +106,10 @@ export default {
 
 @media screen and (max-width: 1366px) {
   .main-container {
-    max-width: 996px;
+    max-width: 956px;
   }
 }
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 956px) {
   .main-container {
     // width: 940px;
     min-width: 1366px;
