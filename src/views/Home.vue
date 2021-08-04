@@ -59,11 +59,10 @@ export default {
 <style lang="scss" scoped>
 @import url("../assets/css/home.css");
 .app-container {
-  display: flex;
-  justify-content: center;
   width: 100%;
-  // width: $maxWidth;
-  margin: 5px 15px 25px 25px;
+  padding: 5px 15px 25px 25px;
+  box-sizing: border-box;
+  max-width: $maxWidth;
   position: relative;
   overflow: hidden;
 }
@@ -104,12 +103,12 @@ export default {
   }
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1200px) {
   .main-container {
-    max-width: 956px;
+    max-width: 996px;
   }
 }
-@media screen and (max-width: 956px) {
+@media screen and (max-width: 996px) {
   .main-container {
     // width: 940px;
     min-width: 1366px;

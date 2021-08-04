@@ -105,25 +105,18 @@ export default {
 @import url("./assets/css/animation.css");
 html,
 body {
-  // display: flex;
-  // justify-content: center;
-  // height: 100%;
-  // width: 100%;
   margin: 0 auto;
-  position: relative;
-  font-family: SourceHanSansSC-Normal;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: SourceHanSansSC-Normal;
   text-align: center;
   margin: 0px;
+  width: 100%;
   height: 100%;
   min-width: $minWidth;
-  max-width: $maxWidth;
-  // width: 100%;
-  position: relative;
 }
 .el-container {
   @include themify($themes) {

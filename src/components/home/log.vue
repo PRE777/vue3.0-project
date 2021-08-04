@@ -94,7 +94,7 @@ export default {
   .log-content {
     width: 100%;
     height: 100%;
-    padding: 5px 5px 10px 10px;
+    padding: 5px 5px 15px 10px;
     box-sizing: border-box;
     font-size: 14px;
     overflow: hidden;
